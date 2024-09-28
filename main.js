@@ -7,10 +7,9 @@ let ul = document.body.children[1];
 let pit = document.body.children[1].lastElementChild;
 console.log(div, ul, pit)
 
-
 // zad2
 
-const listItems = document.querySelectorAll("li");
+let listItems = document.querySelectorAll("li");
 
 for (const item of listItems) {
     item.classList.add("list-item");
@@ -18,13 +17,17 @@ for (const item of listItems) {
 
 // zad3
 
-let num = +prompt("Введите количество блоков");
+let numberOfBlocks = prompt("Введите количество блоков:");
 
-for (let i = 0; i < num; i++) {
-    let div = document.createElement('div');
-    document.body.children[1].after(div)
+numberOfBlocks = parseInt(numberOfBlocks);
+
+let container = document.getElementById('container');
+
+for (let i = 0; i < numberOfBlocks; i++) {
+    let block = document.createElement('div');
+    block.className = 'block';
+    container.appendChild(block);
 }
-
 
 // zad4
 
@@ -42,3 +45,5 @@ document.getElementById('form').prepend(form)
 document.querySelector('form').append(name);
 document.querySelector('form').append(email);
 document.querySelector('form').append(submit);
+
+
